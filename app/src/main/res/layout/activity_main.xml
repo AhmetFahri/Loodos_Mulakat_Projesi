@@ -39,28 +39,18 @@
 
     <LinearLayout
         android:id="@+id/search_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:layout_width="100dp"
+        android:layout_height="43dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="1dp"
-            android:text="SEARCH"
-            android:textColor="@color/colorWhite"
-            android:textStyle="bold"
-            app:fontFamily="@font/open_sans_extrabold" />
+            android:background="@drawable/search_movie_icon" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/open_sans_light"
-            android:text="MOVİE"
-            android:textColor="@color/colorWhite"
-            android:textSize="13sp" />
 
     </LinearLayout>
 

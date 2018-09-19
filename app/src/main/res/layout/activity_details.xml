@@ -19,13 +19,17 @@
             android:id="@+id/collap_toolbar"
             app:layout_scrollFlags="exitUntilCollapsed|scroll"
             app:contentScrim="@color/colorBlack"
-            android:background="@color/colorBackGrey"
             app:expandedTitleMarginStart="48dp"
             app:expandedTitleMarginEnd="64dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/details_thumb"
+                android:scaleType="centerCrop"/>
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="?android:attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 android:theme="@style/ThemeOverlay.AppCompat.Light">
             </android.support.v7.widget.Toolbar>
