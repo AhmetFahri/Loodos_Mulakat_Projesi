@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DetailsActivity"
+    android:background="@color/colorKrem">
+
+    <android.support.design.widget.AppBarLayout
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/appBarLayout">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/collap_toolbar"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:contentScrim="@color/colorBlack"
+            android:background="@color/colorBackGrey"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                android:theme="@style/ThemeOverlay.AppCompat.Light">
+            </android.support.v7.widget.Toolbar>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="40dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <ImageView
+                    android:id="@+id/da_poster_imgv"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/poster_background" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="185dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:id="@+id/da_movie_title_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="32dp"
+                        android:gravity="center_vertical"
+                        android:text=""
+                        android:textColor="@color/colorWhite"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/open_sans_semibold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/da_movie_year_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/colorKrem"
+                        android:textSize="11sp"
+                        app:fontFamily="@font/texgyreadventor_italic"
+                        app:layout_constraintStart_toStartOf="@+id/da_movie_title_tv"
+                        app:layout_constraintTop_toBottomOf="@+id/da_movie_title_tv" />
+
+                    <TextView
+                        android:id="@+id/da_movie_type_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/colorKrem"
+                        android:textSize="13sp"
+                        app:fontFamily="@font/open_sans"
+                        app:layout_constraintStart_toEndOf="@+id/imageView"
+                        app:layout_constraintTop_toBottomOf="@+id/da_movie_year_tv" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/movie_icon"
+                        app:layout_constraintBottom_toBottomOf="@+id/da_movie_type_tv"
+                        app:layout_constraintStart_toStartOf="@+id/da_movie_year_tv"
+                        app:layout_constraintTop_toTopOf="@+id/movie_type_tv"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                </android.support.constraint.ConstraintLayout>
+            </LinearLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IMDB Rating : "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/open_sans_extrabold" />
+
+                <TextView
+                    android:id="@+id/da_movie_imdbRating_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/colorBackGrey"
+                    android:textStyle="italic"
+                    app:fontFamily="@font/open_sans_semibold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Actors : "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/open_sans_extrabold" />
+
+                <TextView
+                    android:id="@+id/da_movie_actors_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/colorBackGrey"
+                    android:textStyle="italic"
+                    app:fontFamily="@font/open_sans_semibold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Genre : "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/open_sans_extrabold" />
+
+                <TextView
+                    android:id="@+id/da_movie_genre_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/colorBackGrey"
+                    android:textStyle="italic"
+                    app:fontFamily="@font/open_sans_semibold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Run Time : "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/open_sans_extrabold" />
+
+                <TextView
+                    android:id="@+id/da_movie_runTime_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/colorBackGrey"
+                    android:textStyle="italic"
+                    app:fontFamily="@font/open_sans_semibold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Released : "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/open_sans_extrabold" />
+
+                <TextView
+                    android:id="@+id/da_movie_released_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/colorBackGrey"
+                    android:textStyle="italic"
+                    app:fontFamily="@font/open_sans_semibold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Director : "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/open_sans_extrabold" />
+
+                <TextView
+                    android:id="@+id/da_movie_director_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/colorBackGrey"
+                    android:textStyle="italic"
+                    app:fontFamily="@font/open_sans_semibold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Writer : "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/open_sans_extrabold" />
+
+                <TextView
+                    android:id="@+id/da_movie_writer_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/colorBackGrey"
+                    android:textStyle="italic"
+                    app:fontFamily="@font/open_sans_semibold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Production : "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/open_sans_extrabold" />
+
+                <TextView
+                    android:id="@+id/da_movie_production_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/colorBackGrey"
+                    android:textStyle="italic"
+                    app:fontFamily="@font/open_sans_semibold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Plot : "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/open_sans_extrabold" />
+
+                <TextView
+                    android:id="@+id/da_movie_plot_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/colorBackGrey"
+                    android:textStyle="italic"
+                    app:fontFamily="@font/open_sans_semibold" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
